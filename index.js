@@ -16,7 +16,7 @@ function initMiddleware() {
   app.use(express.static(__dirname + '/public'));
   app.use(express.logger());
   app.use(express.bodyParser());
-
+  app.use(mw.fetchNavData());
   /**
    * Rendr routes are attached with `app.get()`, which adds them to the
    * `app.router` middleware.
